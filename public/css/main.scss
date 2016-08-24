@@ -1,0 +1,239 @@
+$HeaderFont: 'Playfair Display', serif;
+$TextFont: 'Open Sans', sans-serif;
+$gray: #818181;
+$lightGray: #f1f1f1;
+$blackBack: rgba(#383838, 0.9);
+$background: #303030;
+$shadow: 1px 1px 1px black;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: $background;
+}
+
+nav a {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: $gray;
+	text-decoration: none;
+	text-transform: uppercase;
+  font-family: $HeaderFont;
+	letter-spacing: 1px;
+	font-weight: 400;
+	font-size: 14px;
+  z-index: 1;
+}
+
+nav a:hover,
+nav a:focus {
+	outline: none;
+}
+
+.nav_links a {
+	transition: color 0.3s;
+}
+
+.nav_links a::before {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	color: transparent;
+	content: '•';
+	text-shadow: 0 0 transparent;
+	font-size: 10px;
+	transition: text-shadow 0.3s, color 0.3s;
+	transform: translateX(-50%);
+}
+
+.nav_links a:hover::before,
+.nav_links a:focus::before {
+	color: $gray;
+	text-shadow: 10px 0 $gray, -10px 0 $gray;
+}
+
+.nav_links a:hover,
+.nav_links a:focus {
+	color: $lightGray;
+  text-decoration: none;
+}
+
+.img_links {
+  list-style: none;
+  float: right;
+  padding-left: 0;
+  position: fixed;
+  left: 15px;
+  top: 10px;
+  z-index: 1;
+  li {
+    padding-right: 5px;
+    a {
+      color: $gray;
+      font-size: 30px;
+    }
+    a:hover {
+      color: $lightGray;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+
+//MOBILE NAV LINKS
+
+
+.jumbotron {
+  margin: 0;
+  margin-top: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 0;
+  background-color: $background;
+  height: 200px;
+  margin-bottom: -20px;
+  img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5);
+  }
+}
+.intro {
+  color: $lightGray;
+  font-family: $HeaderFont;
+  text-shadow: $shadow;
+}
+.header_title {
+  color: $lightGray;
+  font-family: $HeaderFont;
+  text-shadow: $shadow;
+}
+//THUMBNAILS
+.thumbnail {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  box-shadow: 4px 5px 10px black;
+  .caption {
+    padding: 0 5px 0 5px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: $blackBack;
+    position: relative;
+    top: 150px;
+    max-width: 100%;
+    h4 {
+      height: 20px;
+      color: $lightGray;
+      font-family: $HeaderFont;
+      text-overflow: ellipsis;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+  }
+  .caption:hover {
+    background-color: black;
+    transition: 0.3s;
+  }
+}
+.thumbnail:hover {
+  box-shadow: 0px 0px 15px $lightGray;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+//DETAILS PAGE
+.detailImage {
+  box-shadow: 4px 5px 15px black;
+  border-radius: 20px;
+  padding: 0;
+  img {
+    border-radius: 6px;
+  }
+}
+.detailTitle {
+  color: $lightGray;
+  font-family: $HeaderFont;
+  text-shadow: $shadow;
+}
+.detailDescription {
+  color: $lightGray;
+  font-family: $TextFont;
+  text-shadow: $shadow;
+}
+.gitLink {
+  margin-bottom: 50px;
+  background-color: $gray;
+  border: none;
+}
+.gitLink:hover {
+  background-color: $lightGray;
+  transition: 0.3s;
+  color: black;
+  cursor: pointer;
+}
+
+
+//CONTACT PAGE
+.contact_info {
+  color: $lightGray;
+  font-family: $TextFont;
+}
+
+//CREATE PAGE
+.createTitle {
+  color: $lightGray;
+  font-family: $HeaderFont;
+}
+.titleInput, .descriptionInput, .repoInput, .imageInput, .dateInput, .featuredInput {
+  color: $lightGray;
+  font-family: $TextFont;
+}
+.ui-widget-header {
+  background: none;
+  background-color: $gray;
+  color: $lightGray;
+  border: none;
+}
+.ui-state-default {
+  color: black !important;
+}
+.saveBtn {
+  background-color: $gray;
+  border: none;
+  width: 100px;
+}
+.saveBtn:hover {
+  background-color: $lightGray;
+  transition: 0.3s;
+  color: black;
+  cursor: pointer;
+}
+
+//ABOUT ME PAGE
+.aboutTitle {
+  color: $lightGray;
+  font-family: $HeaderFont;
+  text-shadow: $shadow;
+}
+.aboutImage {
+  img {
+    width: 100%;
+  }
+  .imgCaption {
+    color: $lightGray;
+    font-family: $TextFont;
+    text-shadow: $shadow;
+    font-size: 12px;
+  }
+}
+.aboutDescription {
+  color: $lightGray;
+  font-family: $TextFont;
+  text-shadow: $shadow;
+  font-size: 20px;
+}

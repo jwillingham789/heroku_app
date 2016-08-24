@@ -1,0 +1,246 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #303030;
+}
+
+nav a {
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  outline: none;
+  color: #818181;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 14px;
+  z-index: 1;
+}
+
+nav a:hover,
+nav a:focus {
+  outline: none;
+}
+
+.nav_links a {
+  transition: color 0.3s;
+}
+
+.nav_links a::before {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  color: transparent;
+  content: '•';
+  text-shadow: 0 0 transparent;
+  font-size: 10px;
+  transition: text-shadow 0.3s, color 0.3s;
+  transform: translateX(-50%);
+}
+
+.nav_links a:hover::before,
+.nav_links a:focus::before {
+  color: #818181;
+  text-shadow: 10px 0 #818181, -10px 0 #818181;
+}
+
+.nav_links a:hover,
+.nav_links a:focus {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.img_links {
+  list-style: none;
+  float: right;
+  padding-left: 0;
+  position: fixed;
+  left: 15px;
+  top: 10px;
+  z-index: 1;
+}
+
+.img_links li {
+  padding-right: 5px;
+}
+
+.img_links li a {
+  color: #818181;
+  font-size: 30px;
+}
+
+.img_links li a:hover {
+  color: #f1f1f1;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.jumbotron {
+  margin: 0;
+  margin-top: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 0;
+  background-color: #303030;
+  height: 200px;
+  margin-bottom: -20px;
+}
+
+.jumbotron img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5);
+}
+
+.intro {
+  color: #f1f1f1;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px 1px black;
+}
+
+.header_title {
+  color: #f1f1f1;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px 1px black;
+}
+
+.thumbnail {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  box-shadow: 4px 5px 10px black;
+}
+
+.thumbnail .caption {
+  padding: 0 5px 0 5px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: rgba(56, 56, 56, 0.9);
+  position: relative;
+  top: 150px;
+  max-width: 100%;
+}
+
+.thumbnail .caption h4 {
+  height: 20px;
+  color: #f1f1f1;
+  font-family: "Playfair Display", serif;
+  text-overflow: ellipsis;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.thumbnail .caption:hover {
+  background-color: black;
+  transition: 0.3s;
+}
+
+.thumbnail:hover {
+  box-shadow: 0px 0px 15px #f1f1f1;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.detailImage {
+  box-shadow: 4px 5px 15px black;
+  border-radius: 20px;
+  padding: 0;
+}
+
+.detailImage img {
+  border-radius: 6px;
+}
+
+.detailTitle {
+  color: #f1f1f1;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px 1px black;
+}
+
+.detailDescription {
+  color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+  text-shadow: 1px 1px 1px black;
+}
+
+.gitLink {
+  margin-bottom: 50px;
+  background-color: #818181;
+  border: none;
+}
+
+.gitLink:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+  color: black;
+  cursor: pointer;
+}
+
+.contact_info {
+  color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+}
+
+.createTitle {
+  color: #f1f1f1;
+  font-family: "Playfair Display", serif;
+}
+
+.titleInput, .descriptionInput, .repoInput, .imageInput, .dateInput, .featuredInput {
+  color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+}
+
+.ui-widget-header {
+  background: none;
+  background-color: #818181;
+  color: #f1f1f1;
+  border: none;
+}
+
+.ui-state-default {
+  color: black !important;
+}
+
+.saveBtn {
+  background-color: #818181;
+  border: none;
+  width: 100px;
+}
+
+.saveBtn:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+  color: black;
+  cursor: pointer;
+}
+
+.aboutTitle {
+  color: #f1f1f1;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px 1px black;
+}
+
+.aboutImage img {
+  width: 100%;
+}
+
+.aboutImage .imgCaption {
+  color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+  text-shadow: 1px 1px 1px black;
+  font-size: 12px;
+}
+
+.aboutDescription {
+  color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+  text-shadow: 1px 1px 1px black;
+  font-size: 20px;
+}
