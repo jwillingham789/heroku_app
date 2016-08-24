@@ -12,7 +12,7 @@ document.body.addEventListener('click', function(e){
 })
 
 //Parses and Sorts the Page Data
-fetch('http://localhost:8000/api/v1/portfolio')
+fetch('https://sleepy-beach-29542.herokuapp.com/api/v1/portfolio')
   .then(function(jsonData){
     return jsonData.json()
   })
@@ -64,7 +64,7 @@ fetch('http://localhost:8000/api/v1/portfolio')
 
   //Details Page
   if (window.location.href.includes('/detail.html?id=')) {
-    fetch('http://localhost:8000/api/v1/portfolio')
+    fetch('https://sleepy-beach-29542.herokuapp.com/api/v1/portfolio')
       .then(function(jsonData){
         return jsonData.json()
       })
