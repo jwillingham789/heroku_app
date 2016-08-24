@@ -12,6 +12,14 @@ var multerFormInput = require('multer')
 var multerFileUpload = multerFormInput({ dest: 'public/images/' })
 var app = expressWebServer()
 
+
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Routes
 app.get('/api/v1/portfolio', function(req, res){
   knexDatabase
@@ -32,12 +40,6 @@ app.post('/save', multerFileUpload.single('image'), function (req, res) {
       res.send('Saved')
     })
 })
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 // Start
 // app.use(expressWebServer.static('public'))
