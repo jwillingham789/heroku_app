@@ -33,12 +33,13 @@ app.use(cors())
 
 // Routes
 app.get('/api/v1/portfolio', function(req, res){
-  knexDatabase
-    .select()
-    .from('portfolio')
-    .then(function(data){
-      res.json(data)
-    })
+  res.json({x: true})
+  // knexDatabase
+  //   .select()
+  //   .from('portfolio')
+  //   .then(function(data){
+  //     res.json(data)
+  //   })
 })
 
 app.post('/save', multerFileUpload.single('image'), function (req, res) {
