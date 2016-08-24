@@ -11,8 +11,11 @@ var expressWebServer = require('express')
 var multerFormInput = require('multer')
 var multerFileUpload = multerFormInput({ dest: 'public/images/' })
 var app = expressWebServer()
+var cors = require('cors')
 
 // Routes
+app.use(cors())
+
 app.get('/api/v1/portfolio', function(req, res){
   knexDatabase
     .select()
