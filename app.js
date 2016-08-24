@@ -12,6 +12,14 @@ var multerFormInput = require('multer')
 var multerFileUpload = multerFormInput({ dest: 'public/images/' })
 var app = expressWebServer()
 
+var io = require('socket.io');
+var server = require('https').createServer(app);
+var allowedOrigins = "https://jwillingham789.github.io/ https://sleepy-beach-29542.herokuapp.com/";
+
+var sio_server = io(server, {
+    origins: allowedOrigins
+});
+
 // Routes
 app.get('/api/v1/portfolio', function(req, res){
   knexDatabase
