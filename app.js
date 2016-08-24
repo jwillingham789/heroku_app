@@ -12,14 +12,6 @@ var multerFormInput = require('multer')
 var multerFileUpload = multerFormInput({ dest: 'public/images/' })
 var app = expressWebServer()
 
-var io = require('socket.io');
-var server = require('https').createServer(app);
-var allowedOrigins = "https://jwillingham789.github.io/:* https://sleepy-beach-29542.herokuapp.com/:*";
-
-var sio_server = io(server, {
-    origins: allowedOrigins
-});
-
 // Routes
 app.get('/api/v1/portfolio', function(req, res){
   knexDatabase
@@ -41,8 +33,14 @@ app.post('/save', multerFileUpload.single('image'), function (req, res) {
     })
 })
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Start
-app.use(expressWebServer.static('public'))
+// app.use(expressWebServer.static('public'))
 app.listen(process.env.PORT || port, function () {
   console.log('Web server on http://localhost:' + port)
   console.log('Press Ctrl+C to stop.')
