@@ -10,16 +10,10 @@ var bookshelfModel = require('bookshelf')(knexDatabase)
 var expressWebServer = require('express')
 var multerFormInput = require('multer')
 var multerFileUpload = multerFormInput({ dest: 'public/images/' })
-var cors = require('cors')
 var app = expressWebServer()
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-app.get('/api/v1/portfolio', function(req, res, next){
+// Routes
+app.get('/api/v1/portfolio', function(req, res){
   knexDatabase
     .select()
     .from('portfolio')
@@ -39,26 +33,9 @@ app.post('/save', multerFileUpload.single('image'), function (req, res) {
     })
 })
 
+// Start
+app.use(expressWebServer.static('public'))
 app.listen(process.env.PORT || port, function () {
   console.log('Web server on http://localhost:' + port)
   console.log('Press Ctrl+C to stop.')
 })
-
-// Routes
-// app.get('/api/v1/portfolio', function(req, res){
-//   knexDatabase
-//     .select()
-//     .from('portfolio')
-//     .then(function(data){
-//       res.json(data)
-//     })
-// })
-
-
-
-// Start
-// app.use(expressWebServer.static('public'))
-// app.listen(process.env.PORT || port, function () {
-//   console.log('Web server on http://localhost:' + port)
-//   console.log('Press Ctrl+C to stop.')
-// })
