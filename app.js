@@ -14,9 +14,7 @@ var app = expressWebServer()
 var cors = require('cors')
 
 // Routes
-app.use(cors())
-
-app.get('/api/v1/portfolio', function(req, res){
+app.get('/api/v1/portfolio', cors(), function(req, res){
   knexDatabase
     .select()
     .from('portfolio')
