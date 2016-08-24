@@ -35,7 +35,7 @@ app.post('/save', multerFileUpload.single('image'), function (req, res) {
 
 // Start
 app.use(expressWebServer.static('public'))
-app.listen(port, function () {
+app.listen(process.env.PORT || port, function () {
   console.log('Web server on http://localhost:' + port)
   console.log('Press Ctrl+C to stop.')
 })
