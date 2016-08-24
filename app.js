@@ -11,9 +11,7 @@ var expressWebServer = require('express')
 var multerFormInput = require('multer')
 var multerFileUpload = multerFormInput({ dest: 'public/images/' })
 var app = expressWebServer()
-var cors = require('cors')
 
-app.use(cors());
 // Routes
 app.get('/api/v1/portfolio', function(req, res){
   knexDatabase
@@ -36,7 +34,7 @@ app.post('/save', multerFileUpload.single('image'), function (req, res) {
 })
 
 // Start
-// app.use(expressWebServer.static('public'))
+app.use(expressWebServer.static('public'))
 app.listen(process.env.PORT || port, function () {
   console.log('Web server on http://localhost:' + port)
   console.log('Press Ctrl+C to stop.')
