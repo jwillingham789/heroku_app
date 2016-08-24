@@ -13,9 +13,11 @@ var multerFileUpload = multerFormInput({ dest: 'public/images/' })
 var cors = require('cors')
 var app = expressWebServer()
 
-
-app.use(cors());
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/api/v1/portfolio', function(req, res, next){
   knexDatabase
@@ -56,7 +58,7 @@ app.listen(process.env.PORT || port, function () {
 
 // Start
 // app.use(expressWebServer.static('public'))
-app.listen(process.env.PORT || port, function () {
-  console.log('Web server on http://localhost:' + port)
-  console.log('Press Ctrl+C to stop.')
-})
+// app.listen(process.env.PORT || port, function () {
+//   console.log('Web server on http://localhost:' + port)
+//   console.log('Press Ctrl+C to stop.')
+// })
