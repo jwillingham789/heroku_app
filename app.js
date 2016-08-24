@@ -14,7 +14,7 @@ var app = expressWebServer()
 
 var io = require('socket.io');
 var server = require('https').createServer(app);
-var allowedOrigins = "https://jwillingham789.github.io/ https://sleepy-beach-29542.herokuapp.com/";
+var allowedOrigins = "https://jwillingham789.github.io/:* https://sleepy-beach-29542.herokuapp.com/:*";
 
 var sio_server = io(server, {
     origins: allowedOrigins
