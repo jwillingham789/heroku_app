@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="407px" height="88px" viewBox="0 0 407 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>myLogo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="W" font-family="ImprintMT-Shadow, Imprint MT Shadow" font-size="72" font-weight="normal" fill="#000000">
+            <tspan x="8.98828125" y="70">W</tspan>
+        </text>
+        <text id="illingham" font-family="ImprintMT-Shadow, Imprint MT Shadow" font-size="72" font-weight="normal" fill="#000000">
+            <tspan x="94" y="70">illingham</tspan>
+        </text>
+        <text id="SM" font-family="Seravek" font-size="14" font-weight="normal" fill="#000000">
+            <tspan x="383" y="33">SM</tspan>
+        </text>
+        <polyline id="Path" stroke="#000000" stroke-width="3" points="2 2 89.2140109 2 89.2140109 84.5"></polyline>
+        <text id="Jake" font-family="Seravek" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="4.782" y="15">Jake</tspan>
+        </text>
+        <text id="Developer" font-family="Seravek" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="20.068" y="82">Developer</tspan>
+        </text>
+        <text id="74" font-family="Seravek" font-size="12" font-weight="normal" fill="#000000">
+            <tspan x="73.812" y="15">74</tspan>
+        </text>
+    </g>
+</svg>
