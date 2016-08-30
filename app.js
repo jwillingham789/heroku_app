@@ -16,10 +16,11 @@ var app = expressWebServer()
 app.use(cors())
 
 // Routes
-app.get('/api/v1/portfolio', function(req, res){orderBy('display_order')
+app.get('/api/v1/portfolio', function(req, res){
   knexDatabase
     .select()
     .from('portfolio')
+    .orderBy('display_order')
     .then(function(data){
       res.json(data)
     })
