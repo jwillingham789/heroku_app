@@ -20,7 +20,6 @@ app.get('/api/v1/portfolio', function(req, res){orderBy('id')
   knexDatabase
     .select()
     .from('portfolio')
-    .orderBy('display_order')
     .then(function(data){
       res.json(data)
     })
